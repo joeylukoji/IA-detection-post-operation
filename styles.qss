@@ -1,0 +1,126 @@
+/* styles.qss - Basic Flat/Modern Theme */
+
+QWidget {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+QMainWindow {
+    background-color: #f0f0f0; /* Light grey background */
+}
+
+QGroupBox {
+    background-color: #ffffff; /* White background for group boxes */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 10px; /* Space above the group box title */
+    padding: 10px;
+    padding-top: 20px; /* Extra padding at the top inside the box */
+    margin-bottom: 10px; /* Space below the group box */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* Position at the top left */
+    padding: 0 5px 0 5px;
+    left: 10px; /* Indent title slightly */
+    color: #333333;
+    font-weight: bold;
+}
+
+QLabel {
+    color: #333333; /* Dark grey text */
+    margin-bottom: 3px; /* Small space below labels */
+}
+
+QSpinBox, QComboBox, QTextEdit {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #333333;
+    min-height: 20px; /* Ensure minimum height */
+}
+
+QSpinBox:focus, QComboBox:focus, QTextEdit:focus {
+    border: 1px solid #007bff; /* Blue border on focus */
+}
+
+QComboBox::drop-down {
+    border: none; /* Cleaner dropdown button */
+}
+
+/* Remove default arrow for a cleaner look, consider adding a custom one if needed */
+QComboBox::down-arrow {
+     image: none;
+}
+
+
+QPushButton {
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    padding: 8px 15px;
+    border: none; /* Flat design - no border */
+    border-radius: 4px;
+    font-size: 11pt;
+    min-width: 100px;
+}
+
+QPushButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+QPushButton:pressed {
+    background-color: #004085; /* Even darker blue when pressed */
+}
+
+/* Specific styling for the results text area using its object name */
+QTextEdit#results_output {
+    font-family: "Courier New", Courier, monospace; /* Monospace for results/code */
+    background-color: #f8f8f8; /* Slightly different background for results */
+    color: #222222;
+}
+
+/* Style for placeholder text */
+QTextEdit[placeholderText] {
+    color: #aaaaaa;
+}
+QSpinBox, QComboBox {
+    min-width: 80px; /* Give some base width */
+}
+
+/* --- Styles pour QTabWidget --- */
+QTabWidget::pane { /* Conteneur des onglets */
+    border: 1px solid #cccccc;
+    border-top: none; /* Le bord supérieur est géré par la barre d'onglets */
+    background-color: #f8f8f8; /* Fond légèrement différent pour la zone de contenu */
+    padding: 10px;
+}
+
+QTabBar::tab { /* Style des onglets individuels */
+    background-color: #e0e0e0; /* Gris clair pour les onglets inactifs */
+    color: #333333;
+    border: 1px solid #cccccc;
+    border-bottom: none; /* Pas de bordure en bas */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 8px 15px;
+    margin-right: 2px; /* Espace entre les onglets */
+    min-width: 100px; /* Largeur minimale */
+}
+
+QTabBar::tab:selected { /* Onglet actif */
+    background-color: #f8f8f8; /* Même fond que le pane pour fusionner */
+    color: #000000;
+    font-weight: bold;
+    border-color: #cccccc;
+     /* La bordure inférieure est 'cachée' car l'onglet est au-dessus du pane */
+}
+
+QTabBar::tab:hover {
+    background-color: #d5d5d5; /* Légèrement plus foncé au survol */
+}
+
+QTabBar::tab:!selected {
+     margin-top: 2px; /* Pousse légèrement les onglets inactifs vers le bas */
+}
